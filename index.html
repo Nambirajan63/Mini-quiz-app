@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+    <link rel="shortcut icon" type="q-icon" href="./quiz-2058888_640.webp">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <header class="header">
+
+        <div class="background">
+            <div id="shape1" class="shape"></div>
+            <div id="shape2" class="shape"></div>
+        </div>
+        <form id="form-1" name="form">
+            <h3>Sign Up Here</h3>
+
+            <label>Student Name</label>
+            <input type="text" placeholder="Enter the Student Name" id="student-name" required name="name">
+            <label>Phone No</label>
+            <input type="number" placeholder="Enter the Phone No" id="phone-no" required min="10" name="phone">
+
+            <label>Roll No</label>
+            <input type="type" placeholder="Enter the Roll No" id="roll-no" required name="roll">
+
+            
+                <input type="submit" class="signup-btn" onclick="signUp(event)">
+                <p>Already have a account? <a href="login.html">Login</a></p>
+             
+        </form>
+        <div class="card">
+            <h2>Plzz...</h2><br>
+            <p>
+            <h3>Enter Your Name, Phone No. and Roll number...!</h3>
+            </p>
+            <br>
+            <br>
+            <br>
+            <button id="close-btn">Close</button>
+        </div>
+        <div class="login-card">
+            <p>Signup Successfully ✔</p>
+        </div>
+</body>
+
+<script>
+
+var studentName = document.getElementById("student-name");
+var phoneNo = document.getElementById("phone-no");
+var rollNo = document.getElementById("roll-no");
+let form = document.forms.form;
+
+var card = document.getElementsByClassName('card')[0];
+var closeBtn = document.getElementById('close-btn');
+
+var loginCard = document.getElementsByClassName('login-card')[0]; 
+
+
+closeBtn.addEventListener('click', ()=> {
+    card.style.display = 'none';
+});
+
+function signUp(e) {
+e.preventDefault();
+
+ const user = {
+    name: studentName.value,
+    phone: phoneNo.value,
+    roll: rollNo.value
+};
+console.log(user);
+
+if(studentName.value && phoneNo.value && rollNo.value) {
+    fetch("http://localhost:3000/data", {
+    method : "POST",
+    headers: {
+        "Content-Type" : "application/json", 
+    },
+    body: JSON.stringify(user)
+})    
+form.reset();
+loginCard.style.display = 'flex';
+setTimeout(()=>{
+    loginCard.style.display = 'none';
+    window.location.href = `question1.html?user=${user.name}&roll=${user.roll}`;
+},1000)
+} else {
+    card.style.display = 'flex';
+}
+
+}
+</script>
+
+
+</html>

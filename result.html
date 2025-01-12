@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESULT PAGE</title>
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="shortcut icon" type="q-icon" href="./quiz-2058888_640.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body style="height: 100vh;background-color: white;">
+    <div id="result-page">
+
+        <h1 class="result-head">Your Result</h1>
+
+        <div class="result">
+            <h3><strong>Name </strong><span id="result-user-name"></span></h3>
+            <h3><strong>Id </strong><span id="result-user-id"></span></h3>
+            <h3><strong>Total-Que </strong><span>10</span></h3>
+            <h3><strong>Correct-Que </strong><span id="correct-que"></span></h3>
+            <h3><strong>Wrong-Que </strong><span id="wrong-que"></span></h3>
+            <h3><strong>Status </strong><span id="status"></span></h3>
+        </div>
+
+
+        <h1 class="share-head">Share your result</h1>
+
+        <div class="icons">
+            <div class="icon">
+                <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <div class="icon">
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="icon">
+                <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F"> <i
+                        class="fa-brands fa-facebook"></i></a>
+            </div>
+            <div class="icon">
+                <a href="https://x.com/?lang=en&mx=2"> <i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=> {
+
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            user = urlParams.get('user');
+            roll_id = urlParams.get('roll');
+            correct_que = urlParams.get('crt');
+            wrong_que = urlParams.get('wrg');
+            console.log(user);
+            
+            document.getElementById('result-user-name').innerHTML = user;
+            document.getElementById('result-user-id').innerHTML = roll_id;
+            document.getElementById('correct-que').innerHTML = correct_que; 
+            document.getElementById('wrong-que').innerHTML = wrong_que;
+
+            if (correct_que >= 8) {
+                document.getElementById('status').innerHTML = "Passed";
+            }
+            else { 
+                document.getElementById('status').innerHTML = "Failed";
+            }
+        })
+    </script>
+
+</body>
+</html>

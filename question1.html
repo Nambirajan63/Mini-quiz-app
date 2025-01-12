@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTION</title>
+    <link rel="shortcut icon" type="q-icon" href="./quiz-2058888_640.webp">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body style="height: 100%;">
+    <div id="main-1">
+        <div class="head">
+            <h3 style="font-size: 22px;color:darkred;" id="user-id"></h3>
+            <h3 style="font-size: 22px;color:darkred;" id="user-name"></h3>
+            <!-- <h3 style="color: whitesmoke;">pg : 1/2</h3> -->
+            <h3 style="color: red;" id="timer-1">Time:05:00</h3>
+        </div>
+
+        <!-- 1st page questions -->
+        <div class="ques-content-1">
+            <h2><span class="span-1"> 1.</span><span class="span-2">How many provinces are there in Pakistan?</span>
+            </h2>
+            <div class="ans-buttons">
+                <button onclick="select_ans('correct', event,)" class="ans-btn">5</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">4</button><br>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">3</button>
+                <button onclick="select_ans('wrong',  event)" class="ans-btn">2</button>
+            </div>
+        </div>
+
+        <div class="ques-content-1">
+            <h2><span class="span-1">2.</span><span class="span-2">How many seasons are there in Pakistan?</span></h2>
+            <div class="ans-buttons">
+                <button onclick="select_ans('wrong', event)" class="ans-btn">1</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">2</button><br>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">3</button>
+                <button onclick="select_ans('correct', event )" class="ans-btn">4</button>
+            </div>
+        </div>
+
+        <div class="ques-content-1">
+            <h2><span class="span-1">3.</span><span class="span-2">How many wheels a car has?</span></h2>
+            <div class="ans-buttons">
+                <button onclick="select_ans('wrong', event)" class="ans-btn">1</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">2</button><br>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">3</button>
+                <button onclick="select_ans('correct', event)" class="ans-btn">4</button>
+            </div>
+        </div>
+
+        <div class="ques-content-1">
+            <h2><span class="span-1">4.</span><span class="span-2">How many wheels a bike has?</span></h2>
+            <div class="ans-buttons">
+                <button onclick="select_ans('wrong', event)" class="ans-btn">1</button>
+                <button onclick="select_ans('correct', event)" class="ans-btn">2</button><br>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">3</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">4</button>
+            </div>
+        </div>
+
+        <div class="ques-content-1" style="margin-bottom: 20px;">
+            <h2><span class="span-1">5.</span><span class="span-2">How many days are in a week?</span></h2>
+            <div class="ans-buttons">
+                <button onclick="select_ans('wrong', event)" class="ans-btn">2</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">3</button><br>
+                <button onclick="select_ans('correct', event)" class="ans-btn">7</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">10</button>
+                <!-- <button class="btn-next" onclick="next_btn()">Next</button> -->
+            </div>
+        </div>
+
+        <div class="ques-content-1">
+            <h2><span class="span-1">6.</span><span class="span-2">How many months are in a year?</span></h2>
+            <div class="ans-buttons">
+                <button onclick="select_ans('wrong', event)" class="ans-btn">5</button>
+                <button onclick="select_ans('correct', event)" class="ans-btn">12</button><br>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">20</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">25</button>
+            </div>
+        </div>
+
+        <div class="ques-content-1">
+            <h2><span class="span-1">7.</span><span class="span-2">Leap year comes after how many years?</span></h2>
+            <div class="ans-buttons">
+                <button onclick="select_ans('wrong', event)" class="ans-btn">1</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">2</button><br>
+                <button onclick="select_ans('correct', event)" class="ans-btn">4</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">10</button>
+            </div>
+        </div>
+
+        <div class="ques-content-1">
+            <h2><span class="span-1">8.</span><span class="span-2">If we divide 10 by 2 then what is the
+                    reminder?</span></h2>
+            <div class="ans-buttons">
+                <button onclick="select_ans('wrong', event)" class="ans-btn">0</button>
+                <button onclick="select_ans('correct', event)" class="ans-btn">5</button><br>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">20</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">2</button>
+            </div>
+        </div>
+
+        <div class="ques-content-1">
+            <h2><span class="span-1">9.</span><span class="span-2">2*25=__?</span></h2>
+            <div class="ans-buttons">
+                <button onclick="select_ans('wrong', event)" class="ans-btn">100</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">10</button><br>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">40</button>
+                <button onclick="select_ans('correct', event)" class="ans-btn">50</button>
+            </div>
+        </div>
+
+        <div class="ques-content-1" style="margin-bottom: 20px;">
+            <h2><span class="span-1">10.</span><span class="span-2">How many minutes are there in an hour?</span></h2>
+            <div class="ans-buttons">
+                <button onclick="select_ans('wrong', event)" class="ans-btn">50</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">10</button><br>
+                <button onclick="select_ans('correct', event)" class="ans-btn">60</button>
+                <button onclick="select_ans('wrong', event)" class="ans-btn">100</button>
+                <button class="btn-result" onclick="result()">Result</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+      
+    var timer1 = document.getElementById('timer-1');
+    var time = 5*60; 
+        
+    var user;
+    var roll_id
+
+    document.addEventListener('DOMContentLoaded', ()=> {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        user = urlParams.get('user');
+        roll_id = urlParams.get('roll');
+        document.getElementById('user-id').innerHTML ='ID : '+ roll_id;
+        document.getElementById('user-name').innerHTML ='Name : '+ user;
+        decrementTime();
+    });
+
+    var correct_que = 0;
+    var wrong_que = 0;
+
+    function select_ans(ans, event) {
+    if (ans == "correct") {
+        correct_que++; 
+    }
+    else {
+        wrong_que++;
+    }
+    let btn_length = event.target.parentElement.children.length;
+    for(let i=0;i<btn_length;i++) {
+        event.target.parentElement.children[i].style.outline = '0';
+    }    
+    event.target.style.outline = '1px solid white';   
+    }
+
+    function updateTime(){
+        var minutes = Math.floor(time/60);
+        var seconds = time % 60;
+        timer1.textContent = minutes.toString().padStart(2,'0') + ':' + seconds.toString().padStart(2,'0');
+    }
+
+    function decrementTime(){
+        if (time>0){
+            time--;
+            updateTime();
+        setTimeout(decrementTime,1000);
+        } else {
+            // alert("This session closed");
+            // window.close();
+        }
+    }
+
+    function result() {
+        window.location.href = `result.html?user=${user}&roll=${roll_id}&crt=${correct_que}&wrg=${wrong_que}`
+    }
+    </script>
+</body>
+</html>

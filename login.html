@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="shortcut icon" type="q-icon" href="./quiz-2058888_640.webp">
+</head>
+<body>
+    <header class="header">
+
+        <div class="background">
+            <div id="shape1" class="shape"></div>
+            <div id="shape2" class="shape"></div>
+        </div>
+        <div id="form-1">
+            <h3>Login Here</h3>
+
+            <label>Student Name</label>
+            <input type="text" placeholder="Enter the Student Name" id="form-user-name">
+
+            <label>Roll No</label>
+            <input type="type" placeholder="Enter the Roll No" id="form-user-id">
+
+            <button class="login-btn" onclick="login()">Log In</button>
+            <p>Don't have a account? <a href="index.html">Register</a></p>
+        </div>
+
+        <!-- Login or not  -->
+        <div class="card">
+            <h2>Plzz...</h2><br>
+            <p>
+            <h3 class="card-content">Enter Your Name and Roll Number...!</h3>
+            </p>
+            <br>
+            <br>
+            <br>
+            <button id="close-btn">Close</button>
+        </div>
+        <div class="login-card">
+            <p>Login Successfully ✔</p>
+        </div>
+    </header>
+
+    <script>
+    let allUser; 
+
+    document.addEventListener("DOMContentLoaded", async () => {
+    await fetch("http://localhost:3000/data")
+    .then(res =>{
+        return res.json();
+    })
+    .then(data =>{
+        allUser = data;
+        // console.log(allUser);
+    })
+    .catch(error =>{
+        console.log(error);
+    })
+});
+
+var user_name = document.getElementById('form-user-name');
+var user_id = document.getElementById('form-user-id');
+
+var card = document.getElementsByClassName('card')[0];
+var closeBtn = document.getElementById('close-btn');
+var cardContent = document.getElementsByClassName('card-content')[0];
+
+var loginCard = document.getElementsByClassName('login-card')[0]; 
+
+
+closeBtn.addEventListener('click', ()=> {
+    card.style.display = 'none';
+});
+
+function login() {     
+    if(user_name.value && user_id.value) {
+       for(let user of allUser) {
+        if(user.Name == user_name.value && user.Roll_no == user_id.value) {
+            loginCard.style.display = 'flex';
+        
+            setTimeout(function cardOut(){
+            loginCard.style.display = 'none';
+            window.location.href = `question1.html?user=${user.Name}&roll=${user.Roll_no}`;     
+        }, 1000);
+       
+        }
+       }
+       card.style.display = 'flex';
+       cardContent.textContent = 'Enter the Correct Name and Roll Number...!';
+    } else {
+        card.style.display = 'flex';
+        cardContent.textContent = 'Enter Your Name and Roll Number...!';
+    }
+    
+};
+
+    </script>
+</body>
+</html>
